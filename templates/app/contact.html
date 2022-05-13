@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+Contact Us - codeatemail
+{% endblock title %}
+
+{% block description %}{% endblock description %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card my-4 mb-4">
+                <form method="post" class="" action="">
+                    <div class="mb-3">
+                        <div class="container">
+                            <h1>Contact Form</h1>
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label">Name :</label><br>{{form.name}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Email address :</label><br>{{form.email}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Phone Number :</label><br>{{form.phone}}<br>
+                        <label for="exampleInputEmail1" class="form-label">City :</label><br>{{form.city}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Country :</label><br>{{form.country}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Message :</label><br>{{form.message}}<br>
+                    </div>
+                    <div class="container">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}
+
+{% block js %}{% endblock js %}
+
+{% block css %}{% endblock css %}

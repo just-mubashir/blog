@@ -1,0 +1,21 @@
+username : mubashir
+password : passme@in1248
+email : codeatemail@gmail.com
+
+
+{% extends "base.html" %}
+{% block title %}
+Contact Us - codeatemail
+{% endblock title %}
+
+{% block description %}{% endblock description %}
+
+{% block body %}
+
+
+
+{% endblock body %}
+
+{% block js %}{% endblock js %}
+
+{% block css %}{% endblock css %}

@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+{% block title %}
+Update - codeatemail
+{% endblock title %}
+
+{% block description %}{% endblock description %}
+
+{% block body %}
+<h1>Update your blog post</h1>
+<div class="container">
+    <div class="row">
+        <div class="clo-sm-4">
+            <div class="card my-4 mb-4">
+                <form method="post" class="" action="">
+                    {% csrf_token %}
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <h1>Contact Form</h1>
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label">Title
+                            :</label><br>{{form.title}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Sub-Title
+                            :</label><br>{{form.sub_title}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Slug 
+                            :</label><br>{{form.slug}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Upload Image
+                            :</label><br>{{form.image}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Links (References)
+                            :</label><br>{{form.links}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Blog Post
+                            :</label><br>{{form.content}}<br>
+                        <label for="exampleInputEmail1" class="form-label">External References
+                            :</label><br>{{form.references}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Code 
+                            :</label><br>{{form.code}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Blog
+                            by:</label><br>{{form.blog_written_by}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Category
+                            :</label><br>{{form.category}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Check to publish Blog post online
+                            :</label><br>{{form.is_active}}<br>
+                    </div>
+                    <div class="container">
+                        <input type="submit" value="Update">
+                    </div>
+                </form>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
+
+{% block js %}{% endblock js %}
+
+{% block css %}{% endblock css %}

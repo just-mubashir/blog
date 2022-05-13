@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}
+Write a blog - codeatemail
+{% endblock title %}
+
+{% block description %}{% endblock description %}
+
+{% block body %}
+<h1>Create a Blog Post</h1>
+<div class="container">
+    <div class="row">
+        <div class="clo-sm-4">
+            <div class="card my-4 mb-4">
+                <form method="post" class="" action="">
+                    {% csrf_token %}
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <h1>Contact Form</h1>
+                        </div>
+                        <label for="exampleInputEmail1" class="form-label">Title
+                            :</label><br>{{forms.title}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Sub-Title:</label><br>{{forms.sub_title}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Slug :</label><br>{{forms.slug}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Upload Image
+                            :</label><br>{{forms.image}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Links (References)
+                            :</label><br>{{forms.links}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Blog Post
+                            :</label><br>{{forms.content}}<br>
+                        <label for="exampleInputEmail1" class="form-label">External References
+                            :</label><br>{{forms.references}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Code :</label><br>{{forms.code}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Blog
+                            by:</label><br>{{forms.blog_written_by}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Category
+                            :</label><br>{{forms.category}}<br>
+                        <label for="exampleInputEmail1" class="form-label">Check to publish Blog post online
+                            :</label><br>{{forms.is_active}}<br>
+                    </div>
+                    <div class="container">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="col-sm-6">
+        <div class="card my-4 mb-4">
+            <h1>Update From Drafts</h1>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Serial No.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Slug</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Created at</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for blog in allblogs %}
+                    <tr>
+
+                        <th scope="row"> {{blog.id}} </th>
+                        <td>{{blog.title}}</td>
+                        <td>{{blog.slug}}</td>
+                        <td>{{blog.blog_written_by}}</td>
+                        <td>{{blog.created_on}}</td>
+                        <td>
+                            <form action="{% url 'delete' blog.id %}" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                            </form>
+                            <hr>
+                            <a class="btn btn-success btn-sm" href="{% url 'update' blog.id %}" value="Update">Edit</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
+{% block js %}{% endblock js %}
+
+{% block css %}{% endblock css %}
